@@ -48,7 +48,7 @@ a = 5
 
 *   **Danh sách (`list`)**: Là tập hợp các phần tử có thứ tự và có thể thay đổi.
     ```python
-    a =
+    a = [1, 2, 3, 4, 'I love AIO']
     ```
     Với danh sách `a`, bạn có thể truy cập các phần tử qua chỉ số (index) bắt đầu từ 0 (`a[0]`), lấy một phần tử (`a[1:4]`), và có thể thêm, xóa, sửa các phần tử.
 
