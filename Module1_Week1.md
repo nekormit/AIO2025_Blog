@@ -2,6 +2,8 @@
 
 ## I. Giới thiệu Python và hệ sinh thái
 
+### 1. Giới thiệu
+
 Python là một ngôn ngữ lập trình phổ biến được thiết kế bởi Guido van Rossum và phát hành lần đầu tiên vào năm 1991. Nó là ngôn ngữ thông dịch, có cú pháp rõ ràng và dễ đọc, đồng thời hỗ trợ các trường phái lập trình khác nhau, bao gồm lập trình hướng đối tượng. Với cú pháp đơn giản và trực quan, Python giúp giảm đáng kể thời gian viết và kiểm thử mã nguồn so với các ngôn ngữ lập trình khác.
 
 Python được ứng dụng rộng rãi trong nhiều lĩnh vực như phân tích dữ liệu, khoa học máy tính, phát triển web, tự động hóa, v.v. do có khả năng xử lý linh hoạt và kho thư viện phong phú.
@@ -12,7 +14,7 @@ Python có thể được cài đặt từ trang chủ chính thức (python.org
 
 Tóm lại: Python ra đời năm 1991 là một ngôn ngữ thông dịch phổ biến, hỗ trợ lập trình hướng đối tượng, với cú pháp đơn giản, thư viện phong phú và cộng đồng lớn. Python được ứng dụng rộng rãi trong phân tích dữ liệu, học máy, phát triển web, tự động hóa...
 
-## 2. Biểu diễn dữ liệu (Data Representation)
+### 2. Biểu diễn dữ liệu (Data Representation)
 
 Trong Python, biến là vùng nhớ để lưu trữ giá trị. Người dùng không cần khai báo kiểu dữ liệu của biến, Python sẽ tự động xác định kiểu dữ liệu dựa trên giá trị được gán. Ví dụ:
 
@@ -82,7 +84,7 @@ number = int(s_number)
 print(type(number)) # Output: <class 'int'>
 ```
 
-## 3. Hàm (Functions)
+### 3. Hàm (Functions)
 
 Trong Python, hàm (function) là một khối mã được tổ chức và có thể tái sử dụng để thực hiện một nhiệm vụ nhất định. Hàm giúp làm cho chương trình có cấu trúc, dễ quản lý, và giảm thiểu sự lặp lại mã.
 
