@@ -1,6 +1,6 @@
 # Python 101 For Beginners
 
-## 1. Giới thiệu Python và hệ sinh thái
+## I. Giới thiệu Python và hệ sinh thái
 
 Python là một ngôn ngữ lập trình phổ biến được thiết kế bởi Guido van Rossum và phát hành lần đầu tiên vào năm 1991. Nó là ngôn ngữ thông dịch, có cú pháp rõ ràng và dễ đọc, đồng thời hỗ trợ các trường phái lập trình khác nhau, bao gồm lập trình hướng đối tượng. Với cú pháp đơn giản và trực quan, Python giúp giảm đáng kể thời gian viết và kiểm thử mã nguồn so với các ngôn ngữ lập trình khác.
 
@@ -151,7 +151,7 @@ def tra_loi_chatbot(cau_hoi):
 Đoạn mã trên sử dụng các câu lệnh điều kiện để đối chiếu đầu vào với một số từ khóa nhất định ("xin chào", "bảo hành") và trả về câu trả lời tương ứng. Đây là phương pháp xây dựng chatbot dựa trên luật đơn giản nhất.
 
 ---
-#2. Các loại vòng lặp
+# II. Các loại vòng lặp
  Bạn mới học và tìm hiểu về Python, và bạn không muốn phải gõ đi gõ lại những đoạn code giống hệt nhau, cùng thực hiện một công việc? Công việc này quả thực rất nhàm chán, vì thế cũng như các ngôn ngữ lập trình khác thì vòng lặp (loop) là thứ "khổng thể thiếu". Sử dụng vòng lặp giúp bạn lặp lại một hoạt động nhiều lần và sẽ cực kỳ hữu dụng trong việc xử lý dữ liệu, tính toán, ...
 
 ## 1. Vòng lặp for
@@ -305,7 +305,7 @@ with open("multiplication.txt", "w") as f:
         for j in range(1, 10):
             f.write(f"{i} x {j} = {i*j}\n")
 ```
-# 3. Coding Methodology - Từ "Chạy Được" Đến "Clean Code"
+# III. Coding Methodology - Từ "Chạy Được" Đến "Clean Code"
 
 Ai trong chúng ta cũng từng viết những dòng code... ờ thì, nó "chạy được". Nhưng để người khác (hoặc chính bạn của vài tháng sau đó) đọc vào mà không muốn "đấm" cái màn hình thì đó lại là một câu chuyện khác á.
 
@@ -618,7 +618,7 @@ except AttributeError as e:
 *   **Pythonic Code** là những thành ngữ diễn đạt code của bạn trở nên thuần Python hơn nhiều.
 
 ---
-#4. Nguyên lý chung để viết code tốt
+# IV. Nguyên lý chung để viết code tốt
 
 ###  DRY - Don't Repeat Yourself
 Nguyên tắc DRY nhấn mạnh việc **tránh lặp lại code**. Hãy:
@@ -787,15 +787,15 @@ def log_activity(user):
 Trong ví dụ trên, mỗi hàm chỉ thực hiện một nhiệm vụ duy nhất.
 ---
 
-# 5. Nguyên Tắc SOLID và Design Patterns
+# V. Nguyên Tắc SOLID và Design Patterns
 
-## Giới Thiệu Về SOLID Principles
+## 1. Giới Thiệu Về SOLID Principles
 
 SOLID là tập hợp 5 nguyên tắc cơ bản trong lập trình hướng đối tượng, được thiết kế để giúp các lập trình viên tạo ra những đoạn code dễ bảo trì, mở rộng và ít gây lỗi. Những nguyên tắc này không chỉ là lý thuyết mà còn là những hướng dẫn thực tiễn đã được kiểm chứng qua nhiều dự án phần mềm lớn. Tên **SOLID** thực chất là từ viết tắt của 5 nguyên tắc: **S**ingle Responsibility, **O**pen/Closed, **L**iskov Substitution, **I**nterface Segregation, và **D**ependency Inversion.
 
 Việc hiểu và áp dụng đúng các nguyên tắc SOLID sẽ giúp bạn viết code có cấu trúc rõ ràng, dễ đọc hiểu, và quan trọng nhất là dễ dàng thay đổi khi yêu cầu kinh doanh thay đổi. Điều này đặc biệt quan trọng trong môi trường phát triển phần mềm hiện đại, nơi mà việc thay đổi và cập nhật liên tục là điều không thể tránh khỏi.
 
-###  Single Responsibility Principle (SRP) - Nguyên Tắc Trách Nhiệm Đơn Lẻ
+###  1.1 Single Responsibility Principle (SRP) - Nguyên Tắc Trách Nhiệm Đơn Lẻ
 
 Nguyên tắc đầu tiên và có thể nói là quan trọng nhất của SOLID là **Single Responsibility Principle**. Nguyên tắc này khẳng định rằng mỗi class chỉ nên có một lý do để thay đổi, hay nói cách khác, mỗi class chỉ nên đảm nhận một trách nhiệm duy nhất. Điều này có nghĩa là khi chúng ta thiết kế một class, chúng ta cần tự hỏi: "Class này đang làm những gì? Liệu nó có đang làm quá nhiều việc cùng lúc không?"
 
@@ -847,7 +847,7 @@ class EmailValidator:
 
 Sau khi refactor, mỗi class chỉ có một trách nhiệm cụ thể. Class `User` chỉ quản lý thông tin người dùng, `UserRepository` chịu trách nhiệm về việc lưu trữ, `EmailService` xử lý việc gửi email, và `EmailValidator` validate dữ liệu email. Bây giờ, khi có thay đổi về cách lưu trữ database, chúng ta chỉ cần sửa `UserRepository` mà không ảnh hưởng đến các class khác.
 
-### Open/Closed Principle (OCP) - Nguyên Tắc Mở/Đóng
+### 1.2 Open/Closed Principle (OCP) - Nguyên Tắc Mở/Đóng
 
 Nguyên tắc thứ hai của SOLID có thể nghe có vẻ mâu thuẫn khi lần đầu tiếp xúc: *"Software entities should be open for extension but closed for modification"* - tạm dịch là *"Các thực thể phần mềm nên mở cho việc mở rộng nhưng đóng cho việc sửa đổi"*. Điều này có nghĩa là chúng ta nên thiết kế code sao cho khi cần thêm tính năng mới, chúng ta có thể mở rộng hành vi của hệ thống mà không cần phải sửa đổi code đã tồn tại và đã được test.
 
@@ -962,7 +962,7 @@ class Penguin(SwimmingBird):
 
 Trong cách thiết kế mới, chúng ta tạo ra một hierarchy hợp lý hơn. Tất cả các loài chim đều có thể di chuyển (`move`), nhưng cách thức di chuyển khác nhau. Bây giờ, bất kỳ function nào hoạt động với `Bird` cũng sẽ hoạt động tốt với `Eagle` hay `Penguin` thông qua method `move()`.
 
-### Interface Segregation Principle (ISP) - Nguyên Tắc Phân Tách Interface
+### 1.3 Interface Segregation Principle (ISP) - Nguyên Tắc Phân Tách Interface
 
 **Interface Segregation Principle** khuyên rằng không nên ép buộc client phụ thuộc vào các interface mà chúng không sử dụng. Thay vì tạo ra một interface lớn chứa nhiều method, chúng ta nên tạo ra nhiều interface nhỏ, mỗi interface tập trung vào một nhóm chức năng liên quan.
 
@@ -1034,7 +1034,7 @@ class AllInOnePrinter(Printer, Scanner, FaxMachine):
 
 Sau khi áp dụng ISP, chúng ta có ba interface riêng biệt. `SimplePrinter` chỉ cần implement `Printer` interface, trong khi `AllInOnePrinter` có thể implement cả ba.
 
-### Dependency Inversion Principle (DIP) - Nguyên Tắc Đảo Ngược Phụ Thuộc
+### 1.4 Dependency Inversion Principle (DIP) - Nguyên Tắc Đảo Ngược Phụ Thuộc
 
 Nguyên tắc cuối cùng của SOLID, **DIP**, gồm hai phần:
 1.  Các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả hai nên phụ thuộc vào abstraction.
@@ -1096,7 +1096,7 @@ Bây giờ, `UserService` phụ thuộc vào `DatabaseInterface` (abstraction). 
 
 ---
 
-## Áp Dụng SOLID Vào Python
+## 2. Áp Dụng SOLID Vào Python
 
 Python, với tính chất linh hoạt, cung cấp nhiều tính năng giúp việc áp dụng các nguyên tắc SOLID trở nên tự nhiên.
 
@@ -1211,7 +1211,7 @@ render_shape(Square())
 
 ---
 
-## Design Patterns Phổ Biến
+## 3. Design Patterns Phổ Biến
 
 Design Patterns là những giải pháp đã được thử nghiệm cho các vấn đề thường gặp trong thiết kế phần mềm. Chúng được chia thành ba nhóm chính: Creational, Structural, và Behavioral.
 
@@ -1433,7 +1433,7 @@ csv_processor.process_data()
 
 ---
 
-## Cách Sử Dụng Design Patterns Hiệu Quả
+## 4. Cách Sử Dụng Design Patterns Hiệu Quả
 
 Sử dụng Design Patterns không chỉ là implement đúng mà còn phải biết khi nào nên và không nên áp dụng.
 
