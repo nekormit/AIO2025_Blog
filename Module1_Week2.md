@@ -1,6 +1,6 @@
 # Module 1/Week 2 AIO 2025: Data Structures in Python, SQL, Git & Github
 ---
-# 1. List trong Python
+# List trong Python
 
 ## 1. Danh sách 1D (1D List)
 
