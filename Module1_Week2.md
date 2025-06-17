@@ -1,8 +1,6 @@
-# List trong Python
-
-> **Tổng quan**: Danh sách (List) là một trong những cấu trúc dữ liệu quan trọng và linh hoạt nhất trong Python. Bài viết này sẽ đưa bạn từ những khái niệm cơ bản đến các ứng dụng nâng cao.
-
+# Module 1/Week 2 AIO 2025: Data Structures in Python, SQL, Git & Github
 ---
+# 1. List trong Python
 
 ## 1. Danh sách 1D (1D List)
 
@@ -976,24 +974,120 @@ Các điểm quan trọng cần nhớ: \
 Việc thành thạo các khái niệm này sẽ giúp bạn xây dựng các chương trình Python hiệu quả, dễ đọc và dễ bảo trì. Hãy thực hành thường xuyên với các bài tập và ứng dụng thực tế để củng cố kiến thức! 
 
 ---
-#part2
----
----
----
+# Tuple, Set, Dictionary trong Python
 
+Trong Python, việc chọn đúng kiểu dữ liệu là bước quan trọng giúc chúng ta thiết kế chương trình dễ đọc, bảo trì và tối ưu về hiệu năng. Ba cấu trúc phổ biến nhất trong Python – Tuple, Set và Dictionary – đều có những tính chất riêng và ứng dụng đặc thùng trong Trí tuệ nhân tạo (AI).
+
+## 1. Tuple - Bộ dữ liệu bất biến, truy cập nhanh
+### Tính chất:
+
+- Immutable: không thể thay đổi sau khi tạo.
+- Ordered: bảo toàn thứ tự.
+- Hợp với việc lưu dữ liệu đồng nhất như toạ độ, vector.
+
+Cú pháp:
+```python
+my_tuple =("AIO205", 2025, True)
+```
+
+Ngoài ra, Tuple còn thường dược được dùng ứng dụng để tính IoU (Intersection over Union) trong thị giác máy tính:
+IoU dùng Tuple để biểu diễn tọa độ trong bounding box (x_min, y_min, x_max, y_max):
+```python
+
+def calculate_iou(box1, box2):
+    xA = max(box1[0], box2[0])
+    yA = max(box1[1], box2[1])
+    xB = min(box1[2], box2[2])
+    yB = min(box1[3], box2[3])
+    
+    inter_area = max(0, xB - xA) * max(0, yB - yA)
+    box1_area = (box1[2] - box1[0]) * (box1[3] - box1[1])
+    box2_area = (box2[2] - box2[0]) * (box2[3] - box2[1])
+    union_area = box1_area + box2_area - inter_area
+    
+    return inter_area / union_area
+
+```
+
+## 2. Set - Bộ tập không trùng lặp, linh hoạt trong phân tích ngôn ngữ
+
+### Tính chất:
+- Không có thứ tự (Unordered).
+- Không chứa phần tử trùng lặp.
+- Có thể thao tác toán học (giao, hợp, hiệu).
+  
+```python
+my_set = {"AIO", "ML", "DL"}
+```
+
+Ứng dụng: Biểu diễn văn bản trong Text Classification
+Sử dụng Set để xây dựng từ điển từ corpus:
+
+```python
+corpus = ["we are learning AI", "AI is a CS topic"]
+vocab = set()
+
+for sentence in corpus:
+    for word in sentence.lower().split():
+        vocab.add(word)
+
+print("Vocabulary:", vocab)
+
+###Output: Vocabulary: {'we', 'ai', 'cs', 'learning', 'topic', 'are', 'is'}
+```
+
+## 3. Dictionary  Ánh xạ khóa-giá trị mạnh mẽ
+###Tính chất:
+
+- Có dạng key: value
+- Truy xuất nhanh, phù hợp với dữ liệu dạng ánh xạ.
+
+```
+my_dict = {"AI": 95, "ML": 90}
+```
+Ứng dụng: Tính histogram ảnh trong thị giác máy tính
+
+```python
+def compute_histogram(image_matrix):
+    histogram = {}
+    for row in image_matrix:
+        for pixel in row:
+            histogram[pixel] = histogram.get(pixel, 0) + 1
+    return histogram
+
+image = [
+    [255, 0, 255],
+    [0, 0, 255],
+    [255, 255, 0]
+]
+
+print(compute_histogram(image))
+###Output:
+{255: 5, 0: 4}
+```
+
+Ứng dụng mở rộng: Non-Maximum Suppression (NMS)
+Trong thuật toán NMS, Tuple dùng để biểu diễn bounding boxes, List để chứa danh sách, còn IoU (sử dụng Tuple) quyết định việc loại bỏ box nào:
+```python
+def nms(boxes, scores, iou_thresh):
+    indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
+    keep = []
+
+    while indices:
+        current = indices.pop(0)
+        keep.append(current)
+        indices = [
+            i for i in indices
+            if calculate_iou(boxes[current], boxes[i]) < iou_thresh
+        ]
+    return keep
+```
+
+### Kết luận
+
+- Việc nắm vững và sử dụng thành thạo Tuple, Set, Dictionary là nền tảng quan trọng cho bất kỳ ai theo học Python và AI. Bạn có thể tối ưu hoá hiệu suất, tổ chức dữ liệu tốt hơn và giãi quyết bài toán nhanh chóng.
+---
 # Cơ sở dữ liệu và SQL
-
-## Mục lục
-1.  **Tổng quan về SQL trong phân tích dữ liệu**
-2.  **Entity Relationship Diagram (ERD)**
-3.  **Chuẩn hóa cơ sở dữ liệu**
-4.  **SQL nâng cao**
-    - 4.1. JOIN (INNER, LEFT, RIGHT, FULL)
-    - 4.2. GROUP BY và HAVING
-    - 4.3. Truy vấn con (Subquery)
-    - 4.4. CTE và hàm cửa sổ (Window Functions)
-
----
 
 ## 1. Tổng quan về SQL trong phân tích dữ liệu
 
