@@ -72,7 +72,7 @@ print(my_array * 3)
 
 Có thể thấy sự khác biệt thông qua 2 ví dụ bên trên.
 
-## 7. Kỹ thuật nâng cao với NumPy
+## 3. Kỹ thuật nâng cao với NumPy
 
 ### a) Integer Array Indexing và Boolean Array Indexing
 
